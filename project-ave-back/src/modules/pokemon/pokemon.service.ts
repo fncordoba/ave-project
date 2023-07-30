@@ -11,7 +11,7 @@ export class PokemonService {
 
       return `Total pokemons with type ${type} are ${pokemonCount}`;
     } catch (error) {
-      console.error(error);
+      throw new Error('Error while fetching pokemon type: ' + error.message);
     }
   }
 
@@ -27,7 +27,7 @@ export class PokemonService {
         typeArray[1],
       );
     } catch (error) {
-      console.error(error);
+      throw new Error('Error while fetching pokemon types: ' + error.message);
     }
   }
 

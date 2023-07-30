@@ -64,7 +64,7 @@ export class PokemonService {
 
   async checkPokemonType(id: number, type: string): Promise<boolean> {
     try {
-      return this.pokemonRepository.checkPokemonType(id, type);
+      return await this.pokemonRepository.checkPokemonType(id, type);
     } catch (error) {
       throw new Error('Error while checking pokemon type: ' + error.message);
     }
